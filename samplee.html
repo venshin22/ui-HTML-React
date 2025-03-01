@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Homepage - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        githubGray: '#24292e',
+                        githubLightGray: '#f6f8fa',
+                        githubBorder: '#eaecef',
+                        githubGreen: '#28a745',
+                        githubBlue: '#0366d6',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-githubLightGray font-sans">
+
+    <header class="bg-githubGray text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">GitHub</a>
+            <nav class="space-x-4">
+                <a href="#" class="hover:text-gray-300">Pull requests</a>
+                <a href="#" class="hover:text-gray-300">Issues</a>
+                <a href="#" class="hover:text-gray-300">Marketplace</a>
+                <a href="#" class="hover:text-gray-300">Explore</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..." class="bg-githubGray border border-gray-600 rounded-md px-4 py-2 text-sm focus:outline-none focus:border-blue-500">
+                <a href="#" class="hover:text-gray-300">+</a>
+                <a href="#" class="hover:text-gray-300">Profile</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8">
+        <section class="grid grid-cols-3 gap-8">
+            <div class="col-span-2">
+                <div class="bg-white rounded-md p-6 border border-githubBorder">
+                    <h2 class="text-lg font-semibold mb-4">Repositories</h2>
+                    <div class="mb-4">
+                        <input type="text" placeholder="Find a repository..." class="w-full border border-githubBorder rounded-md px-4 py-2 text-sm focus:outline-none focus:border-blue-500">
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="border-b border-githubBorder pb-2">
+                            <a href="#" class="text-blue-600 hover:underline">my-project</a>
+                            <p class="text-sm text-gray-600">Updated 2 days ago</p>
+                        </li>
+                        <li class="border-b border-githubBorder pb-2">
+                            <a href="#" class="text-blue-600 hover:underline">another-project</a>
+                            <p class="text-sm text-gray-600">Updated 1 week ago</p>
+                        </li>
+                        <li class="border-b border-githubBorder pb-2">
+                            <a href="#" class="text-blue-600 hover:underline">example-library</a>
+                            <p class="text-sm text-gray-600">Updated 1 month ago</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-md p-6 mt-8 border border-githubBorder">
+                    <h2 class="text-lg font-semibold mb-4">Activity</h2>
+                    <p class="text-sm text-gray-600">No recent activity.</p>
+                </div>
+            </div>
+            <div>
+                <div class="bg-white rounded-md p-6 border border-githubBorder">
+                    <h2 class="text-lg font-semibold mb-4">Your Teams</h2>
+                    <p class="text-sm text-gray-600">You are not a member of any teams.</p>
+                </div>
+                <div class="bg-white rounded-md p-6 mt-8 border border-githubBorder">
+                    <h2 class="text-lg font-semibold mb-4">Explore Repositories</h2>
+                    <ul class="space-y-2">
+                        <li class="border-b border-githubBorder pb-2">
+                            <a href="#" class="text-blue-600 hover:underline">popular-project</a>
+                            <p class="text-sm text-gray-600">Stars: 1000</p>
+                        </li>
+                        <li class="border-b border-githubBorder pb-2">
+                            <a href="#" class="text-blue-600 hover:underline">useful-library</a>
+                            <p class="text-sm text-gray-600">Stars: 500</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-githubGray text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 GitHub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Example Javascript to add some interactivity.
+        //You can expand on this.
+        document.addEventListener('DOMContentLoaded', () => {
+          // Example: Add a simple hover effect to repository links
+          const repoLinks = document.querySelectorAll('.text-blue-600');
+          repoLinks.forEach(link => {
+            link.addEventListener('mouseover', () => {
+              link.classList.add('text-blue-400');
+            });
+            link.addEventListener('mouseout', () => {
+              link.classList.remove('text-blue-400');
+            });
+          });
+        });
+
+    </script>
+</body>
+</html>

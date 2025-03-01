@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex">
+        <div class="w-50 bg-gray-800 text-white min-h-screen p-5">
+            <div class="flex items-center mb-4">
+                <img src="g.jpg" class="w-10 h-10 mr-2" alt="icon"/>
+                <h1 class="text-yellow-600 text-2xl font-bold">Inventory</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="dashboard.html" class="flex items-center space-x-2 py-2 px-2 rounded hover:bg-gray-700">
+                        <span class="text-lg">⊞</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 py-2 px-2 rounded bg-yellow-600">
+                        <span class="text-lg">💻</span>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 py-2 px-2 rounded hover:bg-gray-700">
+                        <span class="text-lg">📋</span>
+                        <span>Assigned Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 py-2 px-2 rounded hover:bg-gray-700">
+                        <span class="text-lg">☰</span>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 py-2 px-2 rounded hover:bg-gray-700">
+                        <span class="text-lg">🏛️</span>
+                        <span>Employee Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2 py-2 px-2 rounded hover:bg-gray-700">
+                        <span class="text-lg">👥</span>
+                        <span>Users Management</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex-1 bg-gray-200">
+            <nav class="bg-gray-800 p-2">
+                <div class="flex items-center">
+                    <h2 class="mr-4 text-white font-bold">☰  Item List</h2>
+                    <h3 class="mr-2 text-white"> <u> Home</u> > </h3>
+                    <h3 class="mr-2 text-white hover:text-blue-600"> Items </h3>
+                </div>
+            </nav>
+            
+            <div class="p-2 flex items-center justify-between">
+                <div class="flex items-center">
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2">+ </button>
+                    <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">- </button>
+                </div>
+                    <button class="bg-gray-600 hover:bg-blue-600 text-white p-2 rounded">Filter</button>
+            </div>
+
+            <div class="max-h-auto bg-white shadow-md overflow-x-auto">
+                <table class="min-w-full border border-black">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2">
+                                <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                            </th>
+                            <th class="px-4 py-2 text-left">Model Name</th>
+                            <th class="px-4 py-2 text-left">Category</th>
+                            <th class="px-4 py-2 text-left">Serial Number</th>
+                            <th class="px-4 py-2 text-left">Model Code</th>
+                            <th class="px-4 py-2 text-left">Status</th>
+                            <th class="px-4 py-2 text-left">Updated by</th>
+                            <th class="px-4 py-2 text-left">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2"> <input type="checkbox" class="h-4 w-3 text-blue-600"> </td>
+                            <td class="px-4 py-2"> sample </td>
+                            <td class="px-4 py-2"> sample </td>
+                            <td class="px-4 py-2"> sample </td>
+                            <td class="px-4 py-2"> sample </td>
+                            <td class="px-4 py-2"> sample </td>
+                            <td class="px-4 py-2"> sample </td>
+                            <td class="px-4 py-2"> 
+                                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2"> Edit </button>
+                                <button class="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded mr-2"> - </button> 
+                            </td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

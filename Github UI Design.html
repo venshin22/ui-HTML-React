@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub UI Sample</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 font-sans">
+
+    <!--Side Nav-->
+    <div
+      id="mySidenav"
+      class="fixed border border-gray-300 h-full max-h-full z-1 bg-white rounded-2xl text-gray-800 w-0 overflow-x-hidden transition-all duration-300 pt-4"
+    >
+      <div class="flex items-center justify-between px-8 pb-6">
+        <img src="github-logo.png" alt="GitHub Logo" class="h-10 mr-2 pb-2" />
+        <a
+          href="javascript:void(0)"
+          class="relative text-center w-8 h-10 rounded-lg text-3xl hover:bg-gray-200"
+          onclick="closeNav()"
+          >&times;</a
+        >
+      </div>
+      <a href="#" class="block py-2 pl-6 text-sm hover:bg-gray-100">Home</a>
+      <a href="#" class="block py-2 pl-6 text-sm hover:bg-gray-100">Issues</a>
+      <a href="#" class="block py-2 pl-6 text-sm hover:bg-gray-100"
+        >Pull Requests</a
+      >
+      <a href="#" class="block py-2 pl-6 text-sm hover:bg-gray-100">Projects</a>
+      <a href="#" class="block py-2 pl-6 text-sm hover:bg-gray-100"
+        >Discussions</a
+      >
+      <a href="#" class="block py-2 pl-6 text-sm hover:bg-gray-100"
+        >Codespaces</a
+      >
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").classList.add("w-72");
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").classList.remove("w-72");
+      }
+    </script>
+    <!--End of Side Nav-->
+
+    <div>
+      <header
+        class="border border-gray-300 bg-gray-100 p-4 shadow flex justify-between items-center"
+      >
+        <div class="flex items-center justify-center">
+          <a class="flex items-center justify center ring ring-gray-400/20 hover:bg-gray-300 rounded-sm px-2">
+            <button
+              onclick="openNav()"
+            >
+              ☰
+            </button>
+          </a>
+          <img src="github-logo.png" alt="GitHub Logo" class="pl-5 h-8 mr-2" />
+          <span class="font-semibold text-md rounded-md px-1 hover:bg-gray-200"
+            >Dashboard</span
+          >
+        </div>
+
+        <div class="relative">
+          <ul class="flex space-x-4">
+            <input type="text" placeholder="Search.." class="relative px-2 rounded-lg border border-gray-400" />
+
+            <li class="relative border hover:bg-gray-200 border-gray-400 rounded-md">
+              <button
+                id="dropdownButton"
+                class="btext-xl px-1 cursor-pointer group " type="button"
+              >
+                + ▾
+                <div
+                  class="absolute hidden group-hover:block bg-gray-800 text-white text-xs py-1 px-2 rounded-md top-full mb-1 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                >
+                  Add New...
+                </div>
+            </button>
+            </li>
+            <li class="relative border border-gray-400 rounded-md">
+              <span
+                class="btext-md text-xl rounded-md px-1 hover:bg-gray-200 cursor-pointer group"
+              >
+                ⊙
+                <div
+                  class="absolute hidden group-hover:block bg-gray-800 text-white text-xs py-1 px-2 rounded-md top-full mb-1 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                >
+                  Your Issues
+                </div>
+              </span>
+            </li>
+            <li class="relative border border-gray-400 rounded-md">
+              <span
+                class="btext-md text-xl rounded-md px-1 hover:bg-gray-200 cursor-pointer group"
+              >
+                ⥯
+                <div
+                  class="absolute hidden group-hover:block bg-gray-800 text-white text-xs py-1 px-2 rounded-md top-full mb-1 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                >
+                  Pull Request
+                </div>
+              </span>
+            </li>
+            <li class="relative">
+              <img src="user.png" alt="User Pic" class="h-8 mr-2" />
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Dropdown menu -->
+        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownButton">
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">New Repository</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Import Repository</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">New Codespace</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">New gis</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">New organization</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">New project</a>
+            </li>
+            </ul>
+        </div>
+
+      <main id="main" class="flex">
+
+        <div class="bg-white w-46 flex-none p-4 shadow border border-gray-100">
+          <h2 class="text-md font-semibold mb-2">Top Repositories</h2>
+          <ul class="space-y-2 pt-4 pb-2">
+            <li><a class="text-sm text-black hover:underline">User/repo1</a></li>
+            <li><a class="text-sm text-black hover:underline">User/repo2</a></li>
+            <li><a class="text-sm text-black hover:underline">User/repo3</a></li>
+            <li><a class="text-sm text-black hover:underline">User/repo3</a></li>
+          </ul>
+        </div>
+
+        <div class="bg-white w-64 grow p-4 shadow">
+          <h2 class="text-xl font-semibold mb-4">Activity Feed</h2>
+          <div class="space-y-4">
+            <div class="border-b pb-2">
+              <p class="text-sm text-gray-600">
+                User pushed to
+                <a href="#" class="hover:text-blue-600 hover:underline"
+                  >repo/main</a
+                >
+              </p>
+              <p class="text-xs text-gray-400">1 hour ago</p>
+            </div>
+            <div class="border-b pb-2">
+              <p class="text-sm text-gray-600">
+                User created a pull request in
+                <a href="#" class="hover:text-blue-500 hover:underline"
+                  >repo/develop</a
+                >
+              </p>
+              <p class="text-xs text-gray-400">2 hours ago</p>
+            </div>
+            <div class="border-b pb-2">
+              <p class="text-sm text-gray-600">
+                User commented on issue #1234 in
+                <a href="#" class="hover:text-blue-500 hover:underline">repo</a>
+              </p>
+              <p class="text-xs text-gray-400">3 hours ago</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600">
+                User created a new repo:
+                <a href="#" class="hover:text-blue-500 hover:underline"
+                  >new-project</a
+                >
+              </p>
+              <p class="text-xs text-gray-400">4 hours ago</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white w-64 flex-none p-4 shadow">
+          <h2 class="text-xl font-semibold mb-4">Teams</h2>
+          <ul>
+            <li class="text-black hover:underline">The Boys</li>
+            <li class="text-black hover:underline">Team Golden</li>
+            <li class="text-black hover:underline">The PLP Boys</li>
+          </ul>
+        </div>
+      </main>
+
+      <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+          <p>&copy; 2025 GitHub. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
