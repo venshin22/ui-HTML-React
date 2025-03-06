@@ -1,40 +1,41 @@
-'use client';
-import { User } from 'lucide-react';
-import React, { useState } from 'react';
+"use client";
+import { User } from "lucide-react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
+      const response = await fetch("/api/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: username, password }), 
+        body: JSON.stringify({ name: username, password }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        alert('Login successful!');
-        console.log('User:', data.user);
-        setUsername('');
-        setPassword('');
-        setError('');
-
-        
+        alert("Login successful!");
+        console.log("User:", data.user);
+        setUsername("");
+        setPassword("");
+        setError("");
+        router.push('/Landing')
       } else {
-        setError(data.message || 'Invalid username or password');
+        setError(data.message || "Invalid username or password");
       }
     } catch (error) {
-      console.error('Login error:', error);
-      setError('An error occurred. Please try again.');
+      console.error("Login error:", error);
+      setError("An error occurred. Please try again.");
     }
   };
 
