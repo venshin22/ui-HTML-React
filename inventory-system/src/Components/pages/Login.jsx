@@ -29,7 +29,7 @@ function Login() {
         setUsername("");
         setPassword("");
         setError("");
-        router.push('/Landing')
+        router.push("/Landing");
       } else {
         setError(data.message || "Invalid username or password");
       }
